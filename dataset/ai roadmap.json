@@ -1,0 +1,761 @@
+{
+  "skill": "Artificial Intelligence",
+  "phases": [
+    {
+      "phase": "Foundations",
+      "nodes": [
+        {
+          "id": "math_linear_algebra",
+          "title": "Linear Algebra",
+          "description": "Study vectors, matrices, matrix multiplication, eigenvalues/eigenvectors.",
+          "resources": [
+            {
+              "name": "Essence of Linear Algebra - 3Blue1Brown",
+              "url": "https://www.youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi"
+            },
+            {
+              "name": "Linear Algebra - Khan Academy",
+              "url": "https://www.khanacademy.org/math/linear-algebra"
+            }
+          ],
+          "prerequisites": [],
+          "level": "Advanced"
+        },
+        {
+          "id": "math_calculus",
+          "title": "Calculus",
+          "description": "Focus on derivatives, gradients, chain rule and their application to optimization.",
+          "resources": [
+            {
+              "name": "Calculus - Khan Academy",
+              "url": "https://www.khanacademy.org/math/calculus-1"
+            },
+            {
+              "name": "Paul's Online Math Notes - Calculus",
+              "url": "https://tutorial.math.lamar.edu/"
+            }
+          ],
+          "prerequisites": [],
+          "level": "Advanced"
+        },
+        {
+          "id": "math_statistics",
+          "title": "Probability & Statistics",
+          "description": "Learn about distributions, Bayes Theorem, mean/variance, and sampling.",
+          "resources": [
+            {
+              "name": "StatQuest with Josh Starmer",
+              "url": "https://www.youtube.com/user/joshstarmer"
+            },
+            {
+              "name": "Statistics - Khan Academy",
+              "url": "https://www.khanacademy.org/math/statistics-probability"
+            }
+          ],
+          "prerequisites": [],
+          "level": "Beginner"
+        },
+        {
+          "id": "python_basics",
+          "title": "Python Programming",
+          "description": "Basic syntax, control flow, functions, and OOP.",
+          "resources": [
+            {
+              "name": "Automate the Boring Stuff with Python",
+              "url": "https://automatetheboringstuff.com/"
+            },
+            {
+              "name": "Python Crash Course - FreeCodeCamp",
+              "url": "https://www.youtube.com/watch?v=rfscVS0vtbw"
+            }
+          ],
+          "prerequisites": [],
+          "level": "Beginner"
+        },
+        {
+          "id": "python_libraries",
+          "title": "Python Libraries (NumPy, Pandas, Matplotlib)",
+          "description": "Use core data libraries for data manipulation and visualization.",
+          "resources": [
+            {
+              "name": "Python - Kaggle Learn",
+              "url": "https://www.kaggle.com/learn/python"
+            },
+            {
+              "name": "NumPy, Pandas, and Matplotlib Docs",
+              "url": "https://github.com/rougier/matplotlib-tutorial"
+            }
+          ],
+          "prerequisites": [
+            "python_basics"
+          ],
+          "level": "Beginner"
+        },
+        {
+          "id": "discrete_math",
+          "title": "Discrete Mathematics",
+          "description": "Learn logic, sets, combinatorics, and graph theory fundamentals.",
+          "resources": [
+            {
+              "name": "Mathematics for Computer Science - MIT OCW",
+              "url": "https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-042j-mathematics-for-computer-science-fall-2005/"
+            },
+            {
+              "name": "Discrete Mathematics - Brilliant",
+              "url": "https://brilliant.org/courses/discrete-mathematics/"
+            }
+          ],
+          "prerequisites": [],
+          "level": "Beginner"
+        },
+        {
+          "id": "cs_basics",
+          "title": "Computer Science Fundamentals",
+          "description": "Covers algorithms, data structures, and complexity analysis.",
+          "resources": [
+            {
+              "name": "CS50x: Introduction to Computer Science - Harvard",
+              "url": "https://cs50.harvard.edu/x/"
+            },
+            {
+              "name": "CLRS Algorithms Book (Unofficial Resources)",
+              "url": "https://github.com/gzc/CLRS"
+            }
+          ],
+          "prerequisites": [
+            "python_basics"
+          ],
+          "level": "Beginner"
+        },
+        {
+          "id": "data_cleaning",
+          "title": "Data Cleaning & Preprocessing",
+          "description": "Handling missing values, outliers, encoding, normalization, and scaling.",
+          "resources": [
+            {
+              "name": "Data Cleaning - Kaggle Learn",
+              "url": "https://www.kaggle.com/learn/data-cleaning"
+            },
+            {
+              "name": "Data Cleaning - DataCamp (Free Intro)",
+              "url": "https://www.datacamp.com/courses/cleaning-data-in-python"
+            }
+          ],
+          "prerequisites": [
+            "python_libraries"
+          ],
+          "level": "Beginner"
+        },
+        {
+          "id": "sql_basics",
+          "title": "SQL for Data Analysis",
+          "description": "Learn SQL to query structured databases and prepare data for AI models.",
+          "resources": [
+            {
+              "name": "SQL Tutorial - Mode Analytics",
+              "url": "https://mode.com/sql-tutorial/"
+            },
+            {
+              "name": "LeetCode - SQL Questions",
+              "url": "https://leetcode.com/problemset/database/"
+            }
+          ],
+          "prerequisites": [
+            "python_basics"
+          ],
+          "level": "Beginner"
+        }
+      ]
+    },
+    {
+      "phase": "Machine Learning Core",
+      "nodes": [
+        {
+          "id": "ml_basics",
+          "title": "Machine Learning Basics",
+          "description": "Supervised, unsupervised learning, train/test splits, model evaluation.",
+          "resources": [
+            {
+              "name": "Andrew Ng's ML Course",
+              "url": ""
+            },
+            {
+              "name": "Hands-On ML with Scikit-Learn",
+              "url": ""
+            }
+          ],
+          "prerequisites": [
+            "python_libraries",
+            "math_statistics"
+          ],
+          "level": "Beginner"
+        },
+        {
+          "id": "ml_algorithms",
+          "title": "Core ML Algorithms",
+          "description": "Linear regression, logistic regression, SVMs, KNN, Decision Trees.",
+          "resources": [
+            {
+              "name": "Hands-On ML Book",
+              "url": ""
+            },
+            {
+              "name": "Google ML Crash Course",
+              "url": ""
+            }
+          ],
+          "prerequisites": [
+            "ml_basics"
+          ],
+          "level": "Intermediate"
+        },
+        {
+          "id": "ml_projects",
+          "title": "ML Projects",
+          "description": "Build real projects like Titanic prediction, housing price regression.",
+          "resources": [
+            {
+              "name": "Kaggle Competitions",
+              "url": ""
+            },
+            {
+              "name": "GitHub Repos",
+              "url": ""
+            }
+          ],
+          "prerequisites": [
+            "ml_algorithms"
+          ],
+          "level": "Intermediate"
+        },
+        {
+          "id": "unsupervised_learning",
+          "title": "Unsupervised Learning Techniques",
+          "description": "Clustering, dimensionality reduction, and anomaly detection.",
+          "resources": [
+            {
+              "name": "Google ML Crash Course",
+              "url": ""
+            },
+            {
+              "name": "Hands-On ML with Scikit-Learn",
+              "url": ""
+            }
+          ],
+          "prerequisites": [
+            "ml_basics"
+          ],
+          "level": "Intermediate"
+        },
+        {
+          "id": "feature_engineering",
+          "title": "Feature Engineering & Selection",
+          "description": "Improve model performance with smarter data transformation.",
+          "resources": [
+            {
+              "name": "Kaggle Courses - Feature Engineering",
+              "url": ""
+            }
+          ],
+          "prerequisites": [
+            "ml_basics"
+          ],
+          "level": "Intermediate"
+        },
+        {
+          "id": "automl",
+          "title": "AutoML Tools",
+          "description": "Use platforms like Google AutoML, H2O.ai, and DataRobot for rapid ML development.",
+          "resources": [
+            {
+              "name": "H2O AutoML Docs",
+              "url": ""
+            },
+            {
+              "name": "Google AutoML Guide",
+              "url": ""
+            }
+          ],
+          "prerequisites": [
+            "ml_algorithms"
+          ],
+          "level": "Intermediate"
+        },
+        {
+          "id": "ml_experiment_tracking",
+          "title": "Experiment Tracking Tools",
+          "description": "Track experiments using MLflow or Weights & Biases.",
+          "resources": [
+            {
+              "name": "MLflow Docs",
+              "url": ""
+            },
+            {
+              "name": "W&B Quickstart",
+              "url": ""
+            }
+          ],
+          "prerequisites": [
+            "ml_projects"
+          ],
+          "level": "Advanced"
+        }
+      ]
+    },
+    {
+      "phase": "Deep Learning",
+      "nodes": [
+        {
+          "id": "dl_neural_nets",
+          "title": "Neural Networks",
+          "description": "Understand neurons, layers, activation functions, and backpropagation.",
+          "resources": [
+            {
+              "name": "DeepLearning.ai",
+              "url": ""
+            },
+            {
+              "name": "FastAI",
+              "url": ""
+            }
+          ],
+          "prerequisites": [
+            "ml_basics"
+          ],
+          "level": "Advanced"
+        },
+        {
+          "id": "dl_frameworks",
+          "title": "PyTorch / TensorFlow",
+          "description": "Use deep learning libraries to build and train models.",
+          "resources": [
+            {
+              "name": "PyTorch Docs",
+              "url": ""
+            },
+            {
+              "name": "TensorFlow Tutorials",
+              "url": ""
+            }
+          ],
+          "prerequisites": [
+            "dl_neural_nets"
+          ],
+          "level": "Advanced"
+        },
+        {
+          "id": "dl_advanced",
+          "title": "CNNs, RNNs, Transformers",
+          "description": "Learn specialized architectures for vision, sequence, and NLP tasks.",
+          "resources": [
+            {
+              "name": "CS231n",
+              "url": ""
+            },
+            {
+              "name": "The Illustrated Transformer",
+              "url": ""
+            }
+          ],
+          "prerequisites": [
+            "dl_neural_nets"
+          ],
+          "level": "Advanced"
+        },
+        {
+          "id": "generative_models",
+          "title": "Generative Models",
+          "description": "Study VAEs, GANs, and diffusion models for content generation.",
+          "resources": [
+            {
+              "name": "Deep Learning Specialization",
+              "url": ""
+            },
+            {
+              "name": "MIT 6.S191",
+              "url": ""
+            }
+          ],
+          "prerequisites": [
+            "dl_neural_nets"
+          ],
+          "level": "Advanced"
+        },
+        {
+          "id": "dl_optimization",
+          "title": "Deep Learning Optimization",
+          "description": "Gradient descent variants, regularization, batch norm, learning rate schedules.",
+          "resources": [
+            {
+              "name": "CS231n",
+              "url": ""
+            },
+            {
+              "name": "FastAI",
+              "url": ""
+            }
+          ],
+          "prerequisites": [
+            "dl_neural_nets"
+          ],
+          "level": "Advanced"
+        },
+        {
+          "id": "vector_databases",
+          "title": "Vector Databases & RAG",
+          "description": "Use FAISS, Pinecone, and RAG pipelines for LLM apps.",
+          "resources": [
+            {
+              "name": "LangChain Docs",
+              "url": ""
+            },
+            {
+              "name": "Pinecone Docs",
+              "url": ""
+            }
+          ],
+          "prerequisites": [
+            "llms"
+          ],
+          "level": "Advanced"
+        },
+        {
+          "id": "prompt_engineering",
+          "title": "Prompt Engineering for LLMs",
+          "description": "Learn zero-shot, few-shot prompting, and prompt chaining techniques.",
+          "resources": [
+            {
+              "name": "OpenAI Cookbook",
+              "url": ""
+            },
+            {
+              "name": "Prompt Engineering Guide",
+              "url": ""
+            }
+          ],
+          "prerequisites": [
+            "llms"
+          ],
+          "level": "Intermediate"
+        },
+        {
+          "id": "explainable_ai",
+          "title": "Explainable AI (XAI)",
+          "description": "Model interpretability with LIME, SHAP, and attention visualization.",
+          "resources": [
+            {
+              "name": "Interpretable ML Book",
+              "url": ""
+            },
+            {
+              "name": "KDnuggets - XAI",
+              "url": ""
+            }
+          ],
+          "prerequisites": [
+            "ml_algorithms"
+          ],
+          "level": "Intermediate"
+        }
+      ]
+    },
+    {
+      "phase": "Specializations & Trends",
+      "nodes": [
+        {
+          "id": "nlp_intro",
+          "title": "NLP Basics",
+          "description": "Tokenization, word embeddings, text classification.",
+          "resources": [
+            {
+              "name": "Hugging Face Course",
+              "url": ""
+            },
+            {
+              "name": "Coursera NLP",
+              "url": ""
+            }
+          ],
+          "prerequisites": [
+            "dl_neural_nets"
+          ],
+          "level": "Beginner"
+        },
+        {
+          "id": "llms",
+          "title": "Large Language Models",
+          "description": "Explore transformers, GPT, BERT, fine-tuning and inference.",
+          "resources": [
+            {
+              "name": "Hugging Face Transformers",
+              "url": ""
+            },
+            {
+              "name": "OpenAI GPT Docs",
+              "url": ""
+            }
+          ],
+          "prerequisites": [
+            "nlp_intro"
+          ],
+          "level": "Advanced"
+        },
+        {
+          "id": "rl_intro",
+          "title": "Reinforcement Learning",
+          "description": "Learn about agents, environments, reward functions, Q-Learning.",
+          "resources": [
+            {
+              "name": "DeepMind x UCL RL Course",
+              "url": ""
+            },
+            {
+              "name": "Spinning Up in Deep RL",
+              "url": ""
+            }
+          ],
+          "prerequisites": [
+            "dl_neural_nets"
+          ],
+          "level": "Advanced"
+        },
+        {
+          "id": "ai_ethics",
+          "title": "AI Ethics & Fairness",
+          "description": "Understand bias, fairness, and responsible AI deployment.",
+          "resources": [
+            {
+              "name": "Ethics in AI by Harvard",
+              "url": ""
+            },
+            {
+              "name": "AI Now Institute Reports",
+              "url": ""
+            }
+          ],
+          "prerequisites": [],
+          "level": "Intermediate"
+        },
+        {
+          "id": "computer_vision",
+          "title": "Computer Vision",
+          "description": "Image classification, object detection, segmentation, OpenCV, YOLO.",
+          "resources": [
+            {
+              "name": "Coursera - CV Specialization",
+              "url": ""
+            },
+            {
+              "name": "PyImageSearch",
+              "url": ""
+            }
+          ],
+          "prerequisites": [
+            "dl_neural_nets"
+          ],
+          "level": "Intermediate"
+        },
+        {
+          "id": "mlops",
+          "title": "MLOps & Deployment",
+          "description": "Model versioning, CI/CD, monitoring, Docker, FastAPI, cloud deployment.",
+          "resources": [
+            {
+              "name": "Full Stack Deep Learning",
+              "url": ""
+            },
+            {
+              "name": "Made With ML",
+              "url": ""
+            }
+          ],
+          "prerequisites": [
+            "ml_projects"
+          ],
+          "level": "Intermediate"
+        },
+        {
+          "id": "robotics",
+          "title": "AI in Robotics",
+          "description": "Perception, planning, SLAM, control systems, ROS framework.",
+          "resources": [
+            {
+              "name": "MIT Robotics Course",
+              "url": ""
+            },
+            {
+              "name": "Coursera - Robotics Specialization",
+              "url": ""
+            }
+          ],
+          "prerequisites": [
+            "rl_intro"
+          ],
+          "level": "Advanced"
+        },
+        {
+          "id": "multimodal_ai",
+          "title": "Multimodal AI",
+          "description": "Combining vision, text, and audio inputs (e.g., CLIP, Flamingo).",
+          "resources": [
+            {
+              "name": "Papers with Code",
+              "url": ""
+            },
+            {
+              "name": "DeepMind Blog",
+              "url": ""
+            }
+          ],
+          "prerequisites": [
+            "llms",
+            "computer_vision"
+          ],
+          "level": "Advanced"
+        },
+        {
+          "id": "ai_regulation",
+          "title": "AI Regulation & Governance",
+          "description": "Explore current AI laws, GDPR, audits, and responsible governance.",
+          "resources": [
+            {
+              "name": "AI Now Institute",
+              "url": ""
+            },
+            {
+              "name": "OECD AI Guidelines",
+              "url": ""
+            }
+          ],
+          "prerequisites": [
+            "ai_ethics"
+          ],
+          "level": "Advanced"
+        },
+        {
+          "id": "tinyml",
+          "title": "AI on Edge Devices (TinyML)",
+          "description": "Deploy models on embedded devices using TensorFlow Lite, ONNX, Edge Impulse.",
+          "resources": [
+            {
+              "name": "TinyML Book",
+              "url": ""
+            },
+            {
+              "name": "Edge AI Courses by Google",
+              "url": ""
+            }
+          ],
+          "prerequisites": [
+            "dl_frameworks"
+          ],
+          "level": "Advanced"
+        },
+        {
+          "id": "agent_frameworks",
+          "title": "LLMs as Agents",
+          "description": "Use frameworks like LangChain, AutoGen, and ReAct for autonomous agents.",
+          "resources": [
+            {
+              "name": "LangChain Docs",
+              "url": ""
+            },
+            {
+              "name": "AutoGen Framework",
+              "url": ""
+            }
+          ],
+          "prerequisites": [
+            "llms"
+          ],
+          "level": "Advanced"
+        }
+      ]
+    },
+    {
+      "phase": "Career Readiness",
+      "nodes": [
+        {
+          "id": "research_papers",
+          "title": "Reading & Understanding Research Papers",
+          "description": "Find, read, and replicate cutting-edge AI research.",
+          "resources": [
+            {
+              "name": "arXiv Sanity",
+              "url": ""
+            },
+            {
+              "name": "How to Read a Paper - Keshav",
+              "url": ""
+            }
+          ],
+          "prerequisites": [
+            "ml_algorithms"
+          ],
+          "level": "Advanced"
+        },
+        {
+          "id": "portfolio_projects",
+          "title": "Creating a Portfolio & Blog",
+          "description": "Showcase your learning via blogs, GitHub, or personal websites.",
+          "resources": [
+            {
+              "name": "Medium Guide",
+              "url": ""
+            },
+            {
+              "name": "Dev.to",
+              "url": ""
+            },
+            {
+              "name": "GitHub Docs",
+              "url": ""
+            }
+          ],
+          "prerequisites": [
+            "ml_projects"
+          ],
+          "level": "Intermediate"
+        },
+        {
+          "id": "open_source",
+          "title": "Contributing to Open Source & Competitions",
+          "description": "Get practical experience by contributing to real-world projects or Kaggle.",
+          "resources": [
+            {
+              "name": "Kaggle",
+              "url": ""
+            },
+            {
+              "name": "First Contributions GitHub",
+              "url": ""
+            }
+          ],
+          "prerequisites": [
+            "ml_projects"
+          ],
+          "level": "Intermediate"
+        },
+        {
+          "id": "job_search",
+          "title": "Interview Preparation & Job Search",
+          "description": "Resume writing, AI job portals, system design & technical interviews.",
+          "resources": [
+            {
+              "name": "Tech Interview Handbook",
+              "url": ""
+            },
+            {
+              "name": "Interview Query",
+              "url": ""
+            }
+          ],
+          "prerequisites": [
+            "portfolio_projects"
+          ],
+          "level": "Advanced"
+        }
+      ]
+    }
+  ]
+}

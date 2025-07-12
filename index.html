@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Mindroute</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #f2f2f2;
+        padding: 30px;
+      }
+      .container {
+        max-width: 700px;
+        margin: auto;
+        background: #fff;
+        padding: 25px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+      h2 {
+        text-align: center;
+      }
+      input,
+      select,
+      textarea,
+      button {
+        width: 100%;
+        padding: 10px;
+        margin: 8px 0 16px;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+      }
+      .timeline-container {
+        display: flex;
+        gap: 15px;
+      }
+      .timeline-input {
+        width: 30%;
+      }
+      .timeline-unit {
+        width: 70%;
+      }
+      button {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #0056b3;
+      }
+      #output {
+        margin-top: 25px;
+        padding: 15px;
+        background-color: #e6f3ff;
+        border-radius: 8px;
+        border: 1px solid #b3d7ff;
+        display: none;
+      }
+      pre {
+        background: #f4f4f4;
+        padding: 10px;
+        border-radius: 6px;
+        overflow-x: auto;
+      }
+      .mermaid {
+        background: #fff;
+        padding: 15px;
+        border-radius: 10px;
+        overflow-x: auto;
+      }
+    </style>
+
+    <!-- Mermaid.js (loaded as module) -->
+    <script type="module">
+      import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs";
+      mermaid.initialize({ startOnLoad: false });
+      window.mermaid = mermaid;
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Mindroute (Your Learning Roadmap Generator)</h2>
+      <form id="roadmapForm">
+        <label for="topic">Topic Name:</label>
+        <input type="text" id="topic" required />
+
+        <label for="level">Knowledge Level:</label>
+        <select id="level" required>
+          <option value="">Select level</option>
+          <option value="beginner">Beginner</option>
+          <option value="intermediate">Intermediate</option>
+          <option value="advanced">Advanced</option>
+        </select>
+
+        <label for="timeline">Timeline:</label>
+        <div class="timeline-container">
+          <input
+            type="number"
+            id="timeline"
+            min="1"
+            max="52"
+            value="8"
+            class="timeline-input"
+            required
+          />
+          <select id="timeline_unit" class="timeline-unit">
+            <option value="days">Days</option>
+            <option value="weeks" selected>Weeks</option>
+            <option value="months">Months</option>
+            <option value="sections">Sections (no time constraint)</option>
+          </select>
+        </div>
+
+        <label for="prompt">Custom Prompt (optional):</label>
+        <textarea
+          id="prompt"
+          rows="4"
+          placeholder="E.g., I want to learn AI for self-driving cars..."
+        ></textarea>
+
+        <button type="submit">Generate Roadmap</button>
+      </form>
+
+      <div id="output">
+        <h3>Your Learning Roadmap:</h3>
+        <pre id="resultText">Loading...</pre>
+
+        <div id="mermaidContainer" style="margin-top: 20px; display: none">
+          <h3>🗺️ Visual Diagram:</h3>
+          <div class="mermaid" id="mermaidDiagram"></div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const form = document.getElementById("roadmapForm");
+      const outputDiv = document.getElementById("output");
+      const resultText = document.getElementById("resultText");
+      const mermaidDiv = document.getElementById("mermaidDiagram");
+      const mermaidContainer = document.getElementById("mermaidContainer");
+
+      form.addEventListener("submit", async function (event) {
+        event.preventDefault();
+
+        const topic = document.getElementById("topic").value;
+        const level = document.getElementById("level").value;
+        const timeline = document.getElementById("timeline").value;
+        const timeline_unit = document.getElementById("timeline_unit").value;
+        const prompt = document.getElementById("prompt").value;
+        const fullPrompt = `${topic} (${level}) ${prompt}`;
+
+        resultText.innerText = "⏳ Generating roadmap...";
+        outputDiv.style.display = "block";
+        mermaidContainer.style.display = "none";
+
+        try {
+          const response = await fetch("http://localhost:5000/generate", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              query: fullPrompt,
+              timeline: timeline,
+              timeline_unit: timeline_unit,
+            }),
+          });
+
+          const data = await response.json();
+          const roadmap = data.roadmap;
+          resultText.innerText = roadmap;
+
+          const mermaidMatch = roadmap.match(/```mermaid\s*([\s\S]*?)```/);
+          if (mermaidMatch) {
+            const rawCode = mermaidMatch[1].trim();
+            mermaidDiv.innerHTML = rawCode;
+            window.mermaid.init(undefined, mermaidDiv);
+            mermaidContainer.style.display = "block";
+          } else {
+            mermaidContainer.style.display = "none";
+          }
+        } catch (error) {
+          resultText.innerText = "❌ Error generating roadmap.";
+          outputDiv.style.display = "block";
+          mermaidContainer.style.display = "none";
+        }
+      });
+    </script>
+  </body>
+</html>

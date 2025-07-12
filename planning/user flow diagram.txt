@@ -1,0 +1,34 @@
+[Start]
+   |
+   v
+[Enter Topic Name]
+   |
+   v
+[Enter Knowledge Level]
+   |
+   v
+[Optional: Enter Custom Prompt]
+   |
+   v
+[Submit]
+   |
+   v
+[System Creates Natural Language Query]
+   |
+   v
+[Query Embedded → Vector Search in DB]
+   |
+   v
+[Relevant Chunks Retrieved]
+   |
+   v
+[Chunks + Prompt Sent to LLM]
+   |
+   v
+[LLM Generates Personalized Learning Roadmap]
+   |
+   v
+[User Views Output]
+   |
+   v
+[End]
